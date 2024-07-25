@@ -5,11 +5,11 @@ import { btnVariant } from "../constants/animations"
 function VolunteerForm() {
   return (
     <>
-      <div className="">
-        <section className="flex flex-col lg:flex-row lg:justify-around space-y-10 lg:space-y-0 m-10 lg:mt-20">
+      <div>
+        <section className="flex flex-col lg:flex-row lg:justify-around space-y-10 lg:space-y-0 mt-16 m-12 lg:mt-24">
           {/* tag line part */}
           <div className="text-5xl lg:text-6xl font-bold">
-            <p>Share your 💡</p> <p>idea on how</p>
+            <p>Share your 💡idea <br /> on how</p>
             <p>we can grow</p>
             <p className=" text-secondaryColor-4">Annotsav</p>
             <p className="text-secondaryColor-4">Movement</p>

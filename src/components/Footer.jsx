@@ -111,7 +111,7 @@ function Footer() {
             <div className=" bg-primaryColor-5 pb-10 ">
               <img src={logo} className="h-14 w-100" />
               <div className="flex justify-around gap-11">
-                <div className="inline-grid grid-cols-2 text-white basis-1/3  ">
+                <div className="inline-grid grid-cols-2 text-white basis-1/3 ">
                   <div className="col-span-2 font-montserrat font-bold ">
                     QUICK LINKS
                   </div>

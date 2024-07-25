@@ -1,4 +1,4 @@
-import { NavLink , useLocation} from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { btnVariant } from "../constants/animations"
@@ -10,46 +10,65 @@ function Navigation() {
   const [animate, setAnimate] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-  const location = useLocation();
+  const location = useLocation()
   useEffect(() => {
-    const navigation = document.querySelector("#navigation");
+    const navigation = document.querySelector("#navigation")
+    const height = window.outerHeight
+    const width = window.outerWidth
+    const lgSHeight = 0.6 * height
+    const smSHeight = 0.2 * height
 
     const updateNavColor = () => {
-      if (!navigation) return;
-      
-      if (location.pathname === '/') {
-        if (window.scrollY > 700) {
-          navigation.classList.add('bg-primaryColor-5');
-        } else {
-          navigation.classList.remove('bg-primaryColor-5');
+      if (!navigation) return
+      if (location.pathname === "/") {
+        // large screen
+        if (width > 500) {
+          if (window.scrollY > lgSHeight) {
+            navigation.classList.add("bg-primaryColor-5")
+          } else {
+            navigation.classList.remove("bg-primaryColor-5")
+          }
         }
-      } else {
-        navigation.classList.add('bg-primaryColor-5');
+        // small screen
+        else {
+          console.log("mobile screen")
+          if(window.scrollY > smSHeight){
+            navigation.classList.add("bg-primaryColor-5")
+          }
+          else{
+            navigation.classList.remove("bg-primaryColor-5")
+          }
+        }
+      } 
+      // every page except home page
+      else {
+        navigation.classList.add("bg-primaryColor-5")
       }
-    };
+    }
 
     const updateScreenWidth = () => {
-      setScreenWidth(window.innerWidth);
-    };
+      setScreenWidth(window.innerWidth)
+    }
 
-    window.addEventListener("resize", updateScreenWidth);
-    window.addEventListener("scroll", updateNavColor);
+    window.addEventListener("resize", updateScreenWidth)
+    window.addEventListener("scroll", updateNavColor)
 
     // Initial call to set the correct nav color based on the current path and scroll position
-    updateNavColor();
+    updateNavColor()
 
     // Cleanup function to remove the event listeners
     return () => {
-      window.removeEventListener("resize", updateScreenWidth);
-      window.removeEventListener("scroll", updateNavColor);
-    };
-  }, [location]);
-  
+      window.removeEventListener("resize", updateScreenWidth)
+      window.removeEventListener("scroll", updateNavColor)
+    }
+  }, [location])
 
   return (
     <>
-      <section >
-        <nav className="   fixed right-0 z-50 left-0 top-0  flex justify-between pr-4 w-full shadow-md  " id="navigation">
+      <section>
+        <nav
+          className=" fixed w-full top-0 z-50  flex justify-between pr-4  shadow-md  "
+          id="navigation">
           <img src={logo} className=" h-14  pr-2" />
 
           {screenWidth < 700 ? (
@@ -130,11 +149,10 @@ function Navigation() {
                           initial="hidden"
                           animate={isOpen ? "visible" : "hidden"}
                           custom={index}
-                          whileTap='tap'
+                          whileTap="tap"
                           onClick={() => {
                             setIsOpen(!isOpen)
-                          }}
-                          >
+                          }}>
                           {item.link}
                         </motion.p>
                       </NavLink>
@@ -147,7 +165,9 @@ function Navigation() {
             //  *************** NAV FOR LARGE SCREEN DEVICES **********************
             <>
               <div className="pt-4 font-raleway text-2xl  text-white h-16 flex  ">
-                <NavLink to="/" className="pr-16 hover:font-semibold  w-40 h-14">
+                <NavLink
+                  to="/"
+                  className="pr-16 hover:font-semibold  w-40 h-14">
                   Home
                 </NavLink>
                 <a
@@ -156,7 +176,9 @@ function Navigation() {
                   className="pr-16 hover:font-semibold  w-40 h-14">
                   Survey
                 </a>
-                <NavLink to="/contact" className="pr-8 hover:font-semibold  w-40 h-14">
+                <NavLink
+                  to="/contact"
+                  className="pr-8 hover:font-semibold  w-40 h-14">
                   Contact Us
                 </NavLink>
 
@@ -165,7 +187,7 @@ function Navigation() {
                   onClick={() => {
                     setAnimate(!animate)
                   }}>
-                  <p >
+                  <p>
                     <motion.button
                       type="button"
                       className="p-2 bg-primaryColor-4 text-white w-36 border-[#713906] border-2 rounded-full h-12 capitalize hover:shadow-lg hover:shadow-primaryColor-3">

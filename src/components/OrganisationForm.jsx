@@ -11,12 +11,10 @@ function OrganisationForm() {
     event.target.textContent = event.target.textContent === ">" ? "v" : ">"
   }
 
-
-
   return (
     <>
-      <div className="">
-        <section className="flex items-center lg:justify-around flex-col lg:flex-row space-y-10 lg:space-y-0 mx-10 mt-8">
+      <div>
+        <section className="flex items-center lg:justify-around flex-col lg:flex-row space-y-10 lg:space-y-0 mx-10 mt-24  lg:mt-20">
           {/* tag line part */}
           <div className="text-5xl lg:text-6xl font-bold w-full lg:w-max text-left pl-2 lg:pl-0">
             <p>Get Annotsav</p> <p>for your</p>{" "}
@@ -57,46 +55,33 @@ function OrganisationForm() {
                 className="input p-2"
               />
             </p>
-            <div className="input mt-2 capitalize !h-10 w-full">
-              <button
-                className="mx-2 mb-2 font-semibold  cursor-pointer text-2xl"
-                onClick={handleToggleView}>
-                {">"}
-              </button>
-              <span className="text-xl !font-light">
-                Size of the Organisation
-              </span>
-            </div>
-
-            <motion.div
-              variants={orgVariant}
-              initial="hidden"
-              animate={isVisible ? "visible" : "hidden"}
-              className="input p-2 mt-2 flex flex-col !h-auto"
-              id="org-size">
-              <span>
-                <input
-                  type="radio"
-                  name="hey"
-                  id="range1"
-                  className="mx-2"
-                  defaultChecked
-                />
-                <label htmlFor="range1">1-10</label>
-              </span>
-              <span>
-                <input type="radio" name="hey" id="range2" className="mx-2" />
-                <label htmlFor="range2">11-50</label>
-              </span>
-              <span>
-                <input type="radio" name="hey" id="range3" className="mx-2" />
-                <label htmlFor="range3">51-100</label>
-              </span>
-              <span>
-                <input type="radio" name="hey" id="range4" className="mx-2" />
-                <label htmlFor="range4">100+</label>
-              </span>
-            </motion.div>
+            <details className=" w-full text-xl my-2">
+              <summary className="text-2xl mb-1  border-[1.4px] border-black p-2">Size of the Organisation </summary>
+              <div className=" flex flex-col border border-black">
+                <span>
+                  <input
+                    type="radio"
+                    name="hey"
+                    id="range1"
+                    className="mx-2"
+                    defaultChecked
+                  />
+                  <label htmlFor="range1">1-10</label>
+                </span>
+                <span>
+                  <input type="radio" name="hey" id="range2" className="mx-2" />
+                  <label htmlFor="range2">11-50</label>
+                </span>
+                <span>
+                  <input type="radio" name="hey" id="range3" className="mx-2" />
+                  <label htmlFor="range3">51-100</label>
+                </span>
+                <span>
+                  <input type="radio" name="hey" id="range4" className="mx-2" />
+                  <label htmlFor="range4">100+</label>
+                </span>
+              </div>
+            </details>
             <textarea
               id="story"
               name="story"
@@ -105,11 +90,14 @@ function OrganisationForm() {
               placeholder="MESSAGE"
               className="p-2 border-[.1em] rounded-sm border-black focus:outline-none w-full  resize-none mt-2"></textarea>
 
-            <motion.button className="bg-primaryColor-5 text-yellow-50  rounded-md lg:rounded-full w-40 lg:w-20 h-8 text-[16px] px-4 relative right-0 lg:-right-[80%] mt-4"
+            <motion.button
+              className="bg-primaryColor-5 text-yellow-50  rounded-md lg:rounded-full w-40 lg:w-20 h-8 text-[16px] px-4 relative right-0 lg:-right-[80%] mt-4"
               variants={btnVariant}
               whileHover={"hover"}
               whileTap={"tap"}
-              onClick={(event) => { event.preventDefault() }}>
+              onClick={(event) => {
+                event.preventDefault()
+              }}>
               Submit
             </motion.button>
           </form>
