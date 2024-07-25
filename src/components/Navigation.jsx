@@ -31,7 +31,6 @@ function Navigation() {
         }
         // small screen
         else {
-          console.log("mobile screen")
           if(window.scrollY > smSHeight){
             navigation.classList.add("bg-primaryColor-5")
           }
