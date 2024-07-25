@@ -34,88 +34,155 @@ function Footer() {
               <br />
               <div className="text-primaryColor-1">ANN-OTSAV</div>
             </h1>
-            <div className="flex bg-primaryColor-5  ">
+            <div className=" bg-primaryColor-5 pb-10 ">
               <img src={logo} className="h-14 w-100" />
-              <div className="inline-grid grid-cols-2 text-white pl-[13%] py-[5%]">
-                <div className="col-span-2 font-montserrat font-bold pb-[20%]">
-                  QUICK LINKS
+              <div className="flex justify-around">
+                <div className="inline-grid grid-cols-2 text-white  ">
+                  <div className="col-span-2 font-montserrat font-bold ">
+                    QUICK LINKS
+                  </div>
+                  <NavLink
+                    className="font-raleway font-sm font-light py-[12%] opacity-60 hover:opacity-100"
+                    to={"/"}>
+                    Home
+                  </NavLink>
+                  <NavLink
+                    className="font-raleway font-sm font-light pl-[23%] py-[12%] opacity-60 hover:opacity-100"
+                    to={"/organisation"}>
+                    Organisation
+                  </NavLink>
+                  <NavLink
+                    className="font-raleway font-sm font-light py-[12%] opacity-60 hover:opacity-100"
+                    to={"contact"}>
+                    Contact Us
+                  </NavLink>
+                  <NavLink
+                    className="font-raleway font-sm font-light pl-[23%] py-[12%] opacity-60 hover:opacity-100"
+                    to={"/volunteer"}>
+                    Volunteer
+                  </NavLink>
+                  <NavLink className="font-raleway font-sm font-light  opacity-60 hover:opacity-100">
+                    Survey
+                  </NavLink>
+                  <NavLink
+                    className="font-raleway font-sm font-light pl-[23%]  opacity-60 hover:opacity-100"
+                    to={"/contact"}>
+                    Reach Us
+                  </NavLink>
                 </div>
-                <NavLink
-                  className="font-raleway font-sm font-light py-[12%] opacity-60 hover:opacity-100"
-                  to={"/"}>
-                  Home
-                </NavLink>
-                <NavLink
-                  className="font-raleway font-sm font-light pl-[23%] py-[12%] opacity-60 hover:opacity-100"
-                  to={"/organisation"}>
-                  Organisation
-                </NavLink>
-                <NavLink
-                  className="font-raleway font-sm font-light py-[12%] opacity-60 hover:opacity-100"
-                  to={"contact"}>
-                  Contact Us
-                </NavLink>
-                <NavLink
-                  className="font-raleway font-sm font-light pl-[23%] py-[12%] opacity-60 hover:opacity-100"
-                  to={"/volunteer"}>
-                  Volunteer
-                </NavLink>
-                <NavLink className="font-raleway font-sm font-light py-[12%] opacity-60 hover:opacity-100">
-                  Survey
-                </NavLink>
-                <NavLink
-                  className="font-raleway font-sm font-light pl-[23%] py-[12%] opacity-60 hover:opacity-100"
-                  to={"/contact"}>
-                  Reach Us
-                </NavLink>
-              </div>
-              <div className="inline-grid grid-cols-1 text-white pl-[13%] py-[5%] gap-[25%]">
-                <div className="font-montserrat font-bold text-center">
-                  DOWNLOAD APP
-                </div>
-                <NavLink to="/">
-                  <img
-                    src={PlaystoreTransparent}
-                    className="max-h-12 shadow-sm hover:shadow-white rounded-lg"
-                  />
-                </NavLink>
-                <NavLink to="/">
-                  <img
-                    src={AppStoreTransparent}
-                    className="max-h-12 shadow-sm hover:shadow-white rounded-lg"
-                  />
-                </NavLink>
-              </div>
-              <div className="inline-grid grid-cols-1 text-white pl-[13%] py-[4%] max-w-[28%]">
-                <a
-                  className="font-raleway font-thin pt-[15%] pb-[7%]"
-                  href="https://shorturl.at/8ezHS"
-                  target="_blank">
-                  <img
-                    src={LocationMarkerTransparent}
-                    className="h-6 inline pr-2 "
-                  />
-                  <span className="font-semibold opacity-60 hover:opacity-100">
-                    Netaji Subhas University of Technology
-                  </span>
-                  , Azad Hind Fauj Marg, Dwarka Sector-3, Dwarka, Delhi, 110078
-                </a>
-                <div className=" font-thin pb-[7%]">
-                  <img src={PhoneTransparent} className="h-6 inline pr-2" />
-                  +91 85956 22774
-                </div>
-                <div className="font-raleway font-thin pb-[7%]">
-                  <img src={MailTransparent} className="h-5 inline pr-2" />
-                  enactus@nsut.ac.in
+                <div className=" text-white    basis-1/2 ">
+                  <a
+                    className="font-raleway font-thin "
+                    href="https://shorturl.at/8ezHS"
+                    target="_blank">
+                    <img
+                      src={LocationMarkerTransparent}
+                      className="h-6 inline pr-2 "
+                    />
+                    <span className="font-semibold opacity-60 hover:opacity-100">
+                      Netaji Subhas University of Technology
+                    </span>
+                    , Azad Hind Fauj Marg, Dwarka Sector-3, Dwarka, Delhi,
+                    110078
+                  </a>
+                  <div className=" font-thin  my-3 ">
+                    <img src={PhoneTransparent} className="h-6 inline pr-2" />
+                    +91 85956 22774
+                  </div>
+                  <div className="font-raleway font-thin ">
+                    <img src={MailTransparent} className="h-5 inline pr-2" />
+                    enactus@nsut.ac.in
+                  </div>
                 </div>
               </div>
             </div>
+            <p className="text-sm text-center bg-primaryColor-5 font-bold  pb-4">{`© ${date.getFullYear()} copyright. All rights reserved.`}</p>
           </section>
         </>
       ) : (
         // ************* FOOTER FOR SMALL SCREEN SIZE ***********
         <>
-          <section className="-mt-10 pt-5 ">
+          <section>
+            <h1 className="font-montserrat font-bold text-6xl text-center mt-[10%] pb-[10%]">
+              LET'S CELEBRATE
+              <br />
+              <div className="text-primaryColor-1">ANN-OTSAV</div>
+            </h1>
+            <div className=" bg-primaryColor-5 pb-10 ">
+              <img src={logo} className="h-14 w-100" />
+              <div className="flex justify-around gap-11">
+                <div className="inline-grid grid-cols-2 text-white basis-1/3  ">
+                  <div className="col-span-2 font-montserrat font-bold ">
+                    QUICK LINKS
+                  </div>
+                  <NavLink
+                    className="font-raleway font-sm font-light py-[12%] opacity-60 hover:opacity-100"
+                    to={"/"}>
+                    Home
+                  </NavLink>
+                  <NavLink
+                    className="font-raleway font-sm font-light pl-[23%] py-[12%] opacity-60 hover:opacity-100"
+                    to={"/organisation"}>
+                    Organisation
+                  </NavLink>
+                  <NavLink
+                    className="font-raleway font-sm font-light py-[12%] opacity-60 hover:opacity-100"
+                    to={"contact"}>
+                    Contact Us
+                  </NavLink>
+                  <NavLink
+                    className="font-raleway font-sm font-light pl-[23%] py-[12%] opacity-60 hover:opacity-100"
+                    to={"/volunteer"}>
+                    Volunteer
+                  </NavLink>
+                  <NavLink className="font-raleway font-sm font-light  opacity-60 hover:opacity-100">
+                    Survey
+                  </NavLink>
+                  <NavLink
+                    className="font-raleway font-sm font-light pl-[23%]  opacity-60 hover:opacity-100"
+                    to={"/contact"}>
+                    Reach Us
+                  </NavLink>
+                </div>
+                <div className=" text-white    basis-1/2 ">
+                  <a
+                    className="font-raleway font-thin "
+                    href="https://shorturl.at/8ezHS"
+                    target="_blank">
+                    <img
+                      src={LocationMarkerTransparent}
+                      className="h-6 inline pr-2 "
+                    />
+                    <span className="font-semibold opacity-60 hover:opacity-100">
+                      Netaji Subhas University of Technology
+                    </span>
+                    , Azad Hind Fauj Marg, Dwarka Sector-3, Dwarka, Delhi,
+                    110078
+                  </a>
+                  <div className=" font-thin  my-3 ">
+                    <img src={PhoneTransparent} className="h-6 inline pr-2" />
+                    +91 85956 22774
+                  </div>
+                  <div className="font-raleway font-thin ">
+                    <img src={MailTransparent} className="h-5 inline pr-2" />
+                    enactus@nsut.ac.in
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <p className="text-sm text-center bg-primaryColor-5 font-bold  pb-4">{`© ${date.getFullYear()} copyright. All rights reserved.`}</p>
+          </section>
+        </>
+      )}
+    </>
+  )
+}
+
+export default Footer
+
+
+{/* <section className="-mt-10 pt-5 ">
             <h1 className="font-montserrat font-bold text-8xl text-center mt-[10%] pb-[10%] max-sm:text-5xl">
               LET'S CELEBRATE
               <br />
@@ -180,11 +247,4 @@ function Footer() {
               </div>
             </div>
             <p className="text-xs bg-primaryColor-5 font-thin text-center pb-4">{`© ${date.getFullYear()} copyright. All rights reserved.`}</p>
-          </section>
-        </>
-      )}
-    </>
-  )
-}
-
-export default Footer
+          </section> */}

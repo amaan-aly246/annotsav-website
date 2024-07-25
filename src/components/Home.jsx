@@ -14,7 +14,7 @@ function Home() {
   // }, [])
   return (
     <div>
-      <div className="bg-[url('/src/assets/images/bg-image.jpg')] bg-center bg-no-repeat bg-cover relative h-[50%] px-[2%] py-[20%]">
+      <div className="bg-[url('/src/assets/images/bg-image.jpg')] bg-center bg-no-repeat bg-cover relative h-[50%] px-[2%] py-[10%]">
         <div className="font-montserrat relative font-bold text-4xl md:text-8xl text-white top-[50%] translate-[(-50%,-50%)]">
           Let
           <br />
@@ -22,10 +22,10 @@ function Home() {
           <br />
           nourish the soil
         </div>
-        <div className=" absolute bottom-0 left-0 cursor-pointer pb-9 flex ">
+        {/* <div className=" absolute bottom-0 left-0 cursor-pointer pb-9 flex ">
         <img src={appstore} className="h-16  ml-[3%]" />
         <img src={playstore} className="h-16 " />
-      </div>
+      </div> */}
       </div>
 
       <div className="flex flex-col lg:flex-row  justify-start md:gap-20 text-sm pt-10  px-auto md:px-24  pl-10 lg:text-xl">
